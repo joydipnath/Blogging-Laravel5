@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,12 +11,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('blog.homepage');
-});
 
+Route::get('/', 'BlogPostController@showPost')->name('showPost');
 Route::get('/post', 'BlogPostController@index')->name('post');
 Route::post('/post', 'BlogPostController@register')->name('post');
+
+Route::delete('/post/{id}', 'BlogPostController@delete')->name('post.delete');
 
 // Route::get('/post', function () {
 //     return view('blog.blogpost');

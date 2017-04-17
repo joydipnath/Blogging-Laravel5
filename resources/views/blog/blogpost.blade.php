@@ -28,7 +28,7 @@
                             <label for="postContent" class="col-md-4 control-label">Content Area</label>
 
                             <div class="col-md-6">
-                                <input id="postContent" type="text" class="form-control" name="postContent" value="{{ old('postContent') }}" required>
+                                <textarea rows="5" id="postContent" type="text" class="form-control" name="postContent" value="{{ old('postContent') }}" required></textarea>
 
                                 @if ($errors->has('postContent'))
                                     <span class="help-block">

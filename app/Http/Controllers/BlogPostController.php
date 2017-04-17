@@ -81,4 +81,22 @@ class BlogPostController extends Controller
             
         ]);
     }
+
+
+    public function showPost(){
+     
+      $posts = Post::orderBy('created_at','asc')->get();
+        // return view('blog.homepage',['post'=>$posts]);
+    	//$posts = Post::all();
+    	// return view('blog.homepage',['post'=>$posts]);
+    	 return view('blog.homepage',compact('posts'));
+    
+
+    }
+
+    public function delete($id){
+
+    	$posts= Post::findOrFail($id)->delete();
+    	return redirect(route('showPost'));
+    }
 }
